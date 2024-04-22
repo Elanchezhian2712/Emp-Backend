@@ -7,7 +7,7 @@ const UserDto = require("../dtos/user-dto");
 
 class TeamController {
   createTeam = async (req, res, next) => {
-    const image = req.file && req.file.filename;
+    // const image = req.file && req.file.filename;
     const { name, description } = req.body;
     if (!name)
       return next(
@@ -35,7 +35,7 @@ class TeamController {
       return next(ErrorHandler.badRequest("Invalid Team Id"));
 
     let { name, description, status, leader } = req.body;
-    const image = req.file && req.file.filename;
+    // const image = req.file && req.file.filename;
     status = status && status.toLowerCase();
 
     if (leader && !mongoose.Types.ObjectId.isValid(leader))

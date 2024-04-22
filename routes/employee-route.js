@@ -4,7 +4,7 @@ const userController = require('../controllers/user-controller');
 const teamController = require('../controllers/team-controller');
 const upload = require('../services/file-upload-service');
 
-// router.patch('/user',upload.single('profile'),asyncMiddleware(userController.updateUser));  // Update Self Account
+router.patch('/user',upload.single('profile'),asyncMiddleware(userController.updateUser));  // Update Self Account
 router.get('/team/:id',asyncMiddleware(teamController.getTeam));
 router.get('/team/:id/members',asyncMiddleware(teamController.getTeamMembers)); 
 router.post('/mark-employee-attendance',asyncMiddleware(userController.markEmployeeAttendance));
